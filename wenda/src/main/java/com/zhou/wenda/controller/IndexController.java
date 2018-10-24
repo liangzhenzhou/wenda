@@ -63,7 +63,7 @@ public class IndexController {
                           HttpSession httpSession,
                           @CookieValue("JSESSIONID") String sessionId) {
         StringBuilder sb = new StringBuilder();
-        sb.append("COOKIEVALUE:" + sessionId);
+        sb.append("COOKIEVALUE:" + sessionId+"<br>");
         Enumeration<String> headerNames = request.getHeaderNames();
         while (headerNames.hasMoreElements()) {
             String name = headerNames.nextElement();
