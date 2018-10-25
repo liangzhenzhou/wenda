@@ -8,7 +8,8 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.SpringApplicationConfiguration;
+//import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 //import org.springframework.boot.test.SpringApplicationConfiguration;
@@ -21,8 +22,8 @@ import java.util.Random;
  * @create 2018-10-24 22:56
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-//@SpringApplicationConfiguration(classes = WendaApplication.class)//该注解不能用，使用springbootTest替代
-@SpringBootTest
+@SpringApplicationConfiguration(classes = WendaApplication.class)//该注解不能用，使用springbootTest替代
+//@SpringBootTest
 @Sql("/init-schema.sql")
 public class InitDatabaseTests {
     @Autowired

@@ -55,7 +55,6 @@ public class IndexController {
         model.addAttribute("user", new User("LEE"));
         return "home";
     }
-
     @RequestMapping(path = {"/request"}, method = {RequestMethod.GET})
     @ResponseBody
     public String request(Model model, HttpServletResponse response,
