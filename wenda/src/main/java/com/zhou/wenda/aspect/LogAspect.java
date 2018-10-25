@@ -19,7 +19,7 @@ import java.util.Date;
 public class LogAspect {
     private static final Logger logger = LoggerFactory.getLogger(LogAspect.class);
 
-    @Before("execution(* com.nowcoder.controller.*Controller.*(..))")
+    @Before("execution(* com.zhou.wenda.controller.*Controller.*(..))")
     public void beforeMethod(JoinPoint joinPoint) {
         StringBuilder sb = new StringBuilder();
         for (Object arg : joinPoint.getArgs()) {
@@ -28,7 +28,7 @@ public class LogAspect {
         logger.info("before method:" + sb.toString());
     }
 
-    @After("execution(* com.nowcoder.controller.IndexController.*(..))")
+    @After("execution(* com.zhou.wenda.controller.IndexController.*(..))")
     public void afterMethod() {
         logger.info("after method" + new Date());
     }

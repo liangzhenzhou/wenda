@@ -21,7 +21,7 @@ import java.util.*;
  * @author liangzhenzhou
  * @create 2018-10-17 21:22
  */
-@Controller
+//@Controller
 public class IndexController {
     private static final Logger logger = LoggerFactory.getLogger(IndexController.class);
     @Autowired
