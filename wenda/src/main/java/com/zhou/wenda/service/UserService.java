@@ -25,6 +25,9 @@ public class UserService {
     @Autowired
     private LoginTicketDAO loginTicketDAO;
 
+    public User selectByName(String name) {
+        return userDAO.selectByName(name);
+    }
     public Map<String,Object> register(String username,String password){
           Map<String,Object> map = new HashMap<String, Object>();
           if(StringUtils.isBlank(username)){
@@ -84,15 +87,15 @@ public class UserService {
     }
 
     private String addLoginTicket(int userId) {
-        LoginTicket ticket = new LoginTicket();
-        ticket.setUserId(userId);
+        LoginTicket loginTicket = new LoginTicket();
+        loginTicket.setUserId(userId);
         Date date = new Date();
         date.setTime(date.getTime() + 1000*3600*24);
-        ticket.setExpired(date);
-        ticket.setStatus(0);
-        ticket.setTicket(UUID.randomUUID().toString().replaceAll("-", ""));
-        loginTicketDAO.addTicket(ticket);
-        return ticket.getTicket();
+        loginTicket.setExpired(date);
+        loginTicket.setStatus(0);
+        loginTicket.setTicket(UUID.randomUUID().toString().replaceAll("-", ""));
+        loginTicketDAO.addTicket(loginTicket);
+        return loginTicket.getTicket();
     }
 
     public User getUser(int id) {

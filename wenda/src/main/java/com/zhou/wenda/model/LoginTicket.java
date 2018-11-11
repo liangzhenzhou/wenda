@@ -10,7 +10,7 @@ public class LoginTicket {
     private int id;
     private int userId;
     private Date expired;
-    private int status;//0 anble  1 unanble
+    private int status;//0 able  1 unable
     private String ticket;
 
     public int getId() {
