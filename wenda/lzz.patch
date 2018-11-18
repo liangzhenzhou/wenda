@@ -1,0 +1,17 @@
+diff --git a/wenda/src/main/java/com/zhou/wenda/service/SensitiveService.java b/wenda/src/main/java/com/zhou/wenda/service/SensitiveService.java
+index bb62aa8..36f5e35 100644
+--- a/wenda/src/main/java/com/zhou/wenda/service/SensitiveService.java
++++ b/wenda/src/main/java/com/zhou/wenda/service/SensitiveService.java
+@@ -185,10 +185,10 @@ public class SensitiveService implements InitializingBean{
+         }
+     }
+ 
+-/*    public static void main(String[] argv) {
++    public static void main(String[] argv) {
+         SensitiveService s = new SensitiveService();
+         s.addWord("色情");
+         s.addWord("好色");
+         System.out.print(s.filter("你好X色**情XX"));
+-    }*/
++    }
+ }

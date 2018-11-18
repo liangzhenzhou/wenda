@@ -25,7 +25,7 @@ public class SensitiveService implements InitializingBean{
     /**
      * 默认敏感词替换符
      */
-    private static final String DEFAULT_REPLACEMENT = "敏感词";
+    private static final String DEFAULT_REPLACEMENT = "****";
 
 
     private class TrieNode {
@@ -185,10 +185,10 @@ public class SensitiveService implements InitializingBean{
         }
     }
 
-/*    public static void main(String[] argv) {
+    public static void main(String[] argv) {
         SensitiveService s = new SensitiveService();
         s.addWord("色情");
         s.addWord("好色");
         System.out.print(s.filter("你好X色**情XX"));
-    }*/
+    }
 }

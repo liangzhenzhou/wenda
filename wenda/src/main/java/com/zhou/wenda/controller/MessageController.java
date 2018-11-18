@@ -37,12 +37,12 @@ public class MessageController {
     @Autowired
     MessageService messageService;
 
-
-    public String conversationDetail(Model model){
+    @RequestMapping(path = {"/msg/list"}, method = {RequestMethod.GET})
+    public String conversationDetail(Model model) {
         try {
             int localUserId = hostHolder.getUser().getId();
             List<ViewObject> conversations = new ArrayList<ViewObject>();
-            List<Message> conversationList = messageService.getConversationList(localUserId,0,10);
+            List<Message> conversationList = messageService.getConversationList(localUserId, 0, 10);
             for (Message msg : conversationList) {
                 ViewObject vo = new ViewObject();
                 vo.set("conversation", msg);
@@ -53,11 +53,11 @@ public class MessageController {
                 conversations.add(vo);
             }
             model.addAttribute("conversations", conversations);
-    } catch (Exception e) {
-        logger.error("获取站内信列表失败" + e.getMessage());
-    }
+        } catch (Exception e) {
+            logger.error("获取站内信列表失败" + e.getMessage());
+        }
         return "letter";
-}
+    }
 
     @RequestMapping(path = {"/msg/detail"}, method = {RequestMethod.GET})
     public String conversationDetail(Model model, @Param("conversationId") String conversationId) {

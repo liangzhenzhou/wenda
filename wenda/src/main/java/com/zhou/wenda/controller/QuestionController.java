@@ -33,7 +33,7 @@ public class QuestionController {
     @Autowired
     CommentService commentService;
 
-    @RequestMapping(value = "/question/{qid}",method = {RequestMethod.POST})
+    @RequestMapping(value = "/question/{qid}",method = {RequestMethod.GET})
     public String questionDetail(Model model, @PathVariable("qid") int qid){
         Question question = questionService.getById(qid);
         model.addAttribute("question",question);
