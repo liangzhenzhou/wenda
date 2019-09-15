@@ -52,7 +52,7 @@ public class UserService {
         user.setPassword(WendaUtil.MD5(password+user.getSalt()));
         userDAO.addUser(user);
 
-        // 登陆
+        // 注册完，直接登陆
         String ticket = addLoginTicket(user.getId());
         map.put("ticket", ticket);
         return map;
