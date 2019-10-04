@@ -56,7 +56,7 @@ public class MailSender implements InitializingBean {
         mailSender.setUsername("course@nowcoder.com");
         //mailSender.setUsername("liangzzhou@foxmailcom");
         mailSender.setPassword("NKnk123");
-        //mailSender.setPassword("LZZ13739190922lzz");
+        //mailSender.setPassword("LZZphonenumberlzz");
         mailSender.setHost("smtp.exmail.qq.com");
         //mailSender.setHost("smtp.qq.com");
         mailSender.setPort(465);
